@@ -76,4 +76,8 @@ Each time the client requests, testlink_info needs to be configured.（客户端
 
 ![img](static/images/updateTestCaseCustomFieldDesignValueTestlinkUI.png)
 
+If it is helpful to you, remember to start the project, thank you for your support
+---
 
+对你有所帮助的话，记得start下项目，谢谢你的支持
+---
