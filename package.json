@@ -1,0 +1,41 @@
+{
+ "name": "postman-2-testlink",
+ "version": "1.0.0",
+ "description": "Connect to TestLink using Postman",
+ "main": "index.js",
+ "repository": {
+  "type": "git",
+  "url": "git+ssh://git@github.com:liyinchigithub/Postman2Testlink.git"
+ },
+ "script": {
+  "start": "node ./test/server.js"
+ },
+ "keywords": [
+  "postman",
+  "testlink",
+  "api",
+  "test",
+  "testsuite",
+  "testcase",
+  "xmlrpc",
+  "connect",
+  "testlink-api",
+  "testlink-connect",
+  "xml-rpc"
+ ],
+ "author": "liyinchi <liyinchi@qq.com> (https://github.com/liyinchigithub)",
+ "license": "",
+ "bugs": {
+  "url": "https://github.com/liyinchigithub/Postman2Testlink/issues"
+ },
+ "homepage": "",
+ "dependencies": {
+  "body-parser": "^1.19.0",
+  "express": "^4.17.1",
+  "log4js": "^6.1.2",
+  "mocha": "^7.1.1",
+  "mochawesome": "^5.0.0",
+  "mysql": "^2.18.1",
+  "xmlrpc": "^1.3.2"
+ }
+}

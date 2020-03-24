@@ -1,0 +1,514 @@
+{
+	"info": {
+		"_postman_id": "d4ccbe67-1da0-439e-a414-4b6b7ffa30b3",
+		"name": "Postman2Testlink",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getTestSuite_获取所有测试项目信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"testlink_info\": {\n\t\t\"host\": \"testlink.xxxx.com\",\n\t\t\"port\": 80,\n\t\t\"secure\": false,\n\t\t\"apiKey\": \"your testlink API Key\"\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/getProjects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"getProjects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTestPlan_创建测试计划",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"testlink_info\": {\n\t\t\"host\": \"testlink.xxxx.com\",\n\t\t\"port\": 80,\n\t\t\"secure\": false,\n\t\t\"apiKey\": \"your testlink API Key\"\n\t},\n\t\"createTestPlan\": {\n\t\t\"testplanname\": \"创建测试计划的名称\",\n\t\t\"testprojectname\": \"测试计划所属测试项目名称\",\n\t\t\"prefix\": \"测试项目前缀,例如：2019xnxm\",\n\t\t\"notes\": \"备注\",\n\t\t\"active\": true,\n\t\t\"public\": true\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/createTestPlan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"createTestPlan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTestSuite_创建测试套件",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"testlink_info\": {\n\t\t\"host\": \"testlink.xxx.com\",\n\t\t\"port\": 80,\n\t\t\"secure\": false,\n\t\t\"apiKey\": \"your testlink API Key\"\n\t},\n\t\"createTestSuite\": {\n\t  \"testprojectid\": 354412,\n      \"prefix\": \"测试项目前缀\",\n            \"testsuitename\": \"创建测试套件的名称\",\n            \"details\": \"测试套件详细\",\n            \"parentid\": 380281,\n            \"checkduplicatedname\": \"\",\n            \"actiononduplicatedname\": 1\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/createTestSuite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"createTestSuite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTestCase_创建测试用例",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"testlink_info\": {\n\t\t\"host\": \"testlink.xxxx.com\",\n\t\t\"port\": 80,\n\t\t\"secure\": false,\n\t\t\"apiKey\": \"your testlink API Key\"\n\t},\n\t\"createTestCase\": {\n\t\t\"testcasename\": \"测试用例名称\",\n\t\t\"testsuiteid\": 924357,\n\t\t\"testprojectid\": 354412,\n\t\t\"authorlogin\": \"yinchi.li\",\n\t\t\"summary\": \"这是测试用例摘要内容\",\n\t\t\"steps\": [{\n\t\t\t\t\"step_number\": 1,\n\t\t\t\t\"actions\": \"步骤动作1\",\n\t\t\t\t\"expected_results\": \"期望的结果1\",\n\t\t\t\t\"execution_type\": 1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"step_number\": 2,\n\t\t\t\t\"actions\": \"步骤动作2\",\n\t\t\t\t\"expected_results\": \"期望的结果2\",\n\t\t\t\t\"execution_type\": 1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"step_number\": 3,\n\t\t\t\t\"actions\": \"步骤动作3\",\n\t\t\t\t\"expected_results\": \"期望的结果3\",\n\t\t\t\t\"execution_type\": 1\n\t\t\t}],\n\t\t\"importance\": 2,\n\t\t\"executiontype\": 1,\n\t\t\"checkduplicatedname\": \"\",\n\t\t\"actiononduplicatedname\": \"generate_new\",\n\t\t\"status\": \"n\",\n\t\t\"estimatedexecduration\": 10\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/createTestCase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"createTestCase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTestCaseCustomFieldDesignValue_更新用例自定义字段的值",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"testlink_info\": {\n\t\t\"host\": \"testlink.xxxx.com\",\n\t\t\"port\": 80,\n\t\t\"secure\": false,\n\t\t\"apiKey\": \"your testlink API Key\"\n\t},\n\t\"updateTestCaseCustomFieldDesignValue\": {\n\t\t\"testcaseexternalid\": \"2019xnxm-19886\",\n\t\t\"version\": 1,\n\t\t\"testprojectid\": 354412,\n\t\t\"customfields\": {\n\t\t\t\"Jira需求\": \"http://www.bing.com\",\n\t\t\t\"初始版本\": \"version 2.0\",\n\t\t\t\"对应开发\": \"刘平贵\",\n\t\t\t\"用例编写者\": \"李银池\",\n\t\t\t\"测试设计备注\": \"测试备注\",\n\t\t\t\"用例类型（业务，界面，用户体验，稳定性）\": \"业务\",\n\t\t\t\"浏览器兼容性\": \"chrome\",\n\t\t\t\"手机兼容性（型号、系统版本）\": \"iOS和Android\",\n\t\t\t\"接口关注字段\": \"新增\",\n\t\t\t\"用例级别\": \"1级\",\n\t\t\t\"测试用例类型（功能、性能、用户体验）\": \"功能\",\n\t\t\t\"适用版本\": \"所有\",\n\t\t\t\"runClass\": \"com.xxx.xxx.xxx\"\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http:/localhost:8020/api/updateTestCaseCustomFieldDesignValue",
+					"host": [
+						"http"
+					],
+					"port": "",
+					"path": [
+						"localhost:8020",
+						"api",
+						"updateTestCaseCustomFieldDesignValue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTestCasesForTestSuite_获取测试套件中所有测试用例",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"getTestCasesForTestSuite\": {\r\n\t\t\"testsuiteid\": 380281,\r\n\t\t\"deep\": false,\r\n\t\t\"details\": \"full\",\r\n\t\t\"getkeywords\": false\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/getTestCasesForTestSuite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"getTestCasesForTestSuite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTestSuite_获取指定项目中测试套件信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"getTestSuite\": {\r\n\t\t\"testsuitename\": \"新建\",\r\n\t\t\"prefix\": \"2019xnxm-\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/getTestSuite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"getTestSuite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTestSuitesForTestPlan_获取指定测试计划，按字母顺序,列出测试计划中的测试套件",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"getTestSuitesForTestPlan\": {\r\n\t\t\"testplanid\": 388051\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/getTestSuitesForTestPlan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"getTestSuitesForTestPlan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTestSuite_更新测试套件信息（测试集）",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"updateTestSuite\": {\r\n\t\t\t\t\"testprojectid\": 354412,\r\n                \"prefix\": \"2019xnxm\",\r\n                \"testsuitename\": \"被更新测试集名称\",\r\n                \"details\": \"被更新测试集详细\",\r\n                \"parentid\": 354415\r\n\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/updateTestSuite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"updateTestSuite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTestCaseCustomFieldDesignValue_获取测试用例自定义字段的值",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"getTestCaseCustomFieldDesignValue\": {\r\n\t\t\"testcaseexternalid\": \"2019xnxm-19886\",\r\n\t\t\"version\": 1,\r\n\t\t\"testprojectid\": 354412,\r\n\t\t\"customfieldname\": \"用例编写者\"\r\n\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/getTestCaseCustomFieldDesignValue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"getTestCaseCustomFieldDesignValue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTestCaseSteps_创建或更新测试用例步骤",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"createTestCaseSteps\": {\r\n\t\t\"testcaseexternalid\": \"2019xnxm-19886\",\r\n\t\t\"testcaseid\": 924745,\r\n\t\t\"version\": 1,\r\n\t\t\"action\": \"update\",\r\n\t\t\"steps\": [{\r\n\t\t\t\t\"step_number\": 1,\r\n\t\t\t\t\"actions\": \"步骤动作1-更改了-\",\r\n\t\t\t\t\"expected_results\": \"期望的结果1-更改了\",\r\n\t\t\t\t\"execution_type\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"step_number\": 2,\r\n\t\t\t\t\"actions\": \"步骤动作2-更改了\",\r\n\t\t\t\t\"expected_results\": \"期望的结果2-更改了\",\r\n\t\t\t\t\"execution_type\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"step_number\": 3,\r\n\t\t\t\t\"actions\": \"步骤动作3-更改了\",\r\n\t\t\t\t\"expected_results\": \"期望的结果3-更改了\",\r\n\t\t\t\t\"execution_type\": 1\r\n\t\t\t}\r\n\t\t]\r\n\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http:/localhost:8020/api/createTestCaseSteps",
+					"host": [
+						"http"
+					],
+					"port": "",
+					"path": [
+						"localhost:8020",
+						"api",
+						"createTestCaseSteps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTestCase_更新已存在的测试用例",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"updateTestCase\": {\r\n\t\t\"testcaseexternalid\": \"2019xnxm-19887\",\r\n\t\t\"version\": 1,\r\n\t\t\"testcasename\": \"被更新的测试用例名称\",\r\n\t\t\"summary\": \"被更新的测试用例摘要内容\",\r\n\t\t\"preconditions\": \"被更新的测试用例前置条件\",\r\n\t\t\"steps\": [{\r\n\t\t\t\t\"step_number\": 1,\r\n\t\t\t\t\"actions\": \"步骤动作1\",\r\n\t\t\t\t\"expected_results\": \"期望的结果1\",\r\n\t\t\t\t\"execution_type\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"step_number\": 2,\r\n\t\t\t\t\"actions\": \"步骤动作2\",\r\n\t\t\t\t\"expected_results\": \"期望的结果2\",\r\n\t\t\t\t\"execution_type\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"step_number\": 3,\r\n\t\t\t\t\"actions\": \"步骤动作3\",\r\n\t\t\t\t\"expected_results\": \"期望的结果3\",\r\n\t\t\t\t\"execution_type\": 1\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"importance\": 3,\r\n\t\t\"executiontype\": 1,\r\n\t\t\"status\": \"n\",\r\n\t\t\"estimatedexecduration\": 10,\r\n\t\t\"user\": \"yinchi.li\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/updateTestCase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"updateTestCase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTestCaseKeywords_向测试用例添加关键字",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"addTestCaseKeywords\": {\r\n\t\t\"keywords\": {\r\n\t\t\t\"2019xnxm-19886 \": [\"关键词1\", \"关键词2\"]\r\n\t\t}\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/addTestCaseKeywords",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"addTestCaseKeywords"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTestCaseSteps_删除测试步骤",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"deleteTestCaseSteps\": {\r\n\t\t\"testcaseexternalid\": \"2019xnxm-19887\",\r\n\t\t\"version\": \"1\",\r\n\t\t\"steps\": [\"1\", \"2\"]\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8020/api/deleteTestCaseSteps",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8020",
+					"path": [
+						"api",
+						"deleteTestCaseSteps"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
