@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d4ccbe67-1da0-439e-a414-4b6b7ffa30b3",
+		"_postman_id": "ec28fc7c-07b6-4796-8045-6cf66a67d718",
 		"name": "Postman2Testlink",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -504,6 +504,48 @@
 					"path": [
 						"api",
 						"deleteTestCaseSteps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProjectTestPlans_获取项目中的测试计划列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"testlink_info\": {\r\n\t\t\"host\": \"testlink.xxxx.com\",\r\n\t\t\"port\": 80,\r\n\t\t\"secure\": false,\r\n\t\t\"apiKey\": \"your testlink API Key\"\r\n\t},\r\n\t\"getProjectTestPlans\": {\r\n\t\t\"testprojectid\": 354412\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/:8020/api/getProjectTestPlans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						":8020",
+						"api",
+						"getProjectTestPlans"
+					],
+					"variable": [
+						{
+							"key": "8020",
+							"value": ""
+						}
 					]
 				}
 			},
