@@ -1,4 +1,4 @@
-﻿# Postman2Testlink
+# Postman2Testlink
 
 Requirements
   tool  | version
@@ -81,4 +81,7 @@ Each time the client requests, testlink_info needs to be configured.（客户端
 # 更新记录
 
 #### 2020-03-28
->新增获取测试项目中所有测试计划数据
+>add getProjectTestPlans() 新增获取测试项目中所有测试计划数据
+
+#### 2020-03-31
+>add getTestCaseKeywords() 获取给定测试用例的关键字列表
