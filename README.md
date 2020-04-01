@@ -87,3 +87,6 @@ Each time the client requests, testlink_info needs to be configured.（客户端
 >add getTestCaseKeywords() 获取给定测试用例的关键字列表
 
 >add batchAddTestCaseKeywords() 批量对给定测试用例，添加关键字
+
+#### 2020-04-01
+>add batchUpdateTestCaseCustomFieldDesignValue() 批量向测试用例添加自定义字段
