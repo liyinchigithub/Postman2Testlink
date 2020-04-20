@@ -9,7 +9,7 @@ Requirements
 
 [API Document](https://note.youdao.com/ynoteshare1/index.html?id=1b64f29437a77f86f0e22ac412987c54&type=note)
 
-[FAQ](https://note.youdao.com/ynoteshare1/index.html?id=1b64f29437a77f86f0e22ac412987c54&type=note)
+[FAQ](http://note.youdao.com/noteshare?id=64d99aed32db47d133f638908243b10b&sub=CCD48A85B9E34376AA8808B42800473E)
 
 ## install
 ```
