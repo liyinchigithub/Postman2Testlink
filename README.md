@@ -96,3 +96,19 @@ Each time the client requests, testlink_info needs to be configured.（客户端
 
 #### 2020-04-20
 >add reportTCResult() 执行测试用例
+
+
+
+
+## 常见问题
+
+1.端口被占用
+
+（1）查看端口占用进程号
+```
+netstat -ano|findstr "8021"
+```
+（2）假设进程ID为10492，执行进程结束命令
+```
+taskkill -PID 10492 -F
+```
