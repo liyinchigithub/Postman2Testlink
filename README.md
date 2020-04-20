@@ -104,6 +104,7 @@ Each time the client requests, testlink_info needs to be configured.（客户端
 
 1.端口被占用
 
+【window】
 （1）查看端口占用进程号
 ```
 netstat -ano|findstr "8021"
@@ -111,4 +112,14 @@ netstat -ano|findstr "8021"
 （2）假设进程ID为10492，执行进程结束命令
 ```
 taskkill -PID 10492 -F
+```
+
+【linux】
+（1）查看端口占用进程号
+```
+ps -ef|grep 8020
+```
+（2）假设进程ID为10492，执行进程结束命令
+```
+kill -s 9 10492
 ```
