@@ -11,6 +11,7 @@ Requirements
 
 [FAQ](http://note.youdao.com/noteshare?id=64d99aed32db47d133f638908243b10b&sub=CCD48A85B9E34376AA8808B42800473E)
 
+
 ## install
 ```
 npm install
@@ -92,7 +93,7 @@ Each time the client requests, testlink_info needs to be configured.（客户端
 >add batchUpdateTestCaseCustomFieldDesignValue() 批量向测试用例添加自定义字段
 
 #### 2020-04-19
->add uploadExecutionAttachment() 向测试用例上传图片附件
+>add uploadExecutionAttachment() 向测试用例执行结果历史记录，上传图片附件
 
 #### 2020-04-20
 >add reportTCResult() 执行测试用例
