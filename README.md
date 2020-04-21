@@ -100,14 +100,23 @@ Each time the client requests, testlink_info needs to be configured.（客户端
 
 #### 2020-04-21
 >add uploadTestCaseAttachment() 为测试用例上传附件
+
 >add addTestCaseToTestPlan() 添加测试用例到测试计划中
+
 >add createBuild() 为指定测试计划创建新的测试版本
+
 >add closeBuild() 关闭一个测试版本
+
 >add createPlatform() 创建平台
+
 >add deleteTestPlan() 删除测试计划
+
 >add uploadRequirementAttachment() 为需求上传附件
+
 >add uploadTestProjectAttachment() 为测试项目上传附件
+
 >add uploadTestSuiteAttachment() 为测试套件上传附件
+
 >add assignRequirements() 将需求分配给测试用例，需求可以属于不同的需求规格
 
 
