@@ -119,6 +119,9 @@ Each time the client requests, testlink_info needs to be configured.（客户端
 
 >add assignRequirements() 将需求分配给测试用例，需求可以属于不同的需求规格
 
+#### 2020-04-24
+>add getBuildsForTestPlan() 获取测试计划中构建版本信息
+
 
 ## 常见问题
 
