@@ -1,5 +1,9 @@
 # Postman2Testlink
 
+
+recommend: [China-Gitee](https://gitee.com/liyinchi/Postman2Testlink)，[Other-Github](https://github.com/liyinchigithub/Postman2Testlink)
+
+
 Requirements
   tool  | version
   ------------- | -------------
